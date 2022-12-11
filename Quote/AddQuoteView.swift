@@ -2,6 +2,8 @@ import SwiftUI
 
 struct AddQuoteView: View {
     
+    private let service = QuoteService()
+    @Environment(\.presentationMode) var presentationMode
     @State private var quote = ""
     
     var body: some View {
@@ -13,7 +15,15 @@ struct AddQuoteView: View {
                     .cornerRadius(12)
                 Spacer()
                 Button {
-                    
+                    if quote != "" {
+                        service.uploadQuote(quote: Quote(quote: quote)) { succes in
+                            if succes {
+                                presentationMode.wrappedValue.dismiss()
+                            } else {
+                                return
+                            }
+                        }
+                    }
                 } label: {
                     Text("Add")
                         .bold()
