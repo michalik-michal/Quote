@@ -1,14 +1,14 @@
-//
-//  QuoteApp.swift
-//  Quote
-//
-//  Created by Michał Michalik on 11/12/2022.
-//
-
 import SwiftUI
 
 @main
 struct QuoteApp: App {
+    
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
