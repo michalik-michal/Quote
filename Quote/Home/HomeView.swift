@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @ObservedObject private var viewModel = HomeViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 Divider()
                 VStack(spacing: 20) {
-                    ForEach((1...10), id: \.self) { _ in
-                        QuoteCellView(text: "Teswdedefjvpsprrprpspirjrpi spjrpsfprifpa p jfspij fpirjsp pt")
+                    ForEach(viewModel.quotes) { quote in
+                        QuoteCellView(text: quote.quote)
                     }
                 }
             }

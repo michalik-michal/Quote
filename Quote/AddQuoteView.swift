@@ -16,7 +16,7 @@ struct AddQuoteView: View {
                 Spacer()
                 Button {
                     if quote != "" {
-                        service.uploadQuote(quote: Quote(quote: quote)) { succes in
+                        service.uploadQuote(quote: Quote(quote: quote, date: Date().description)) { succes in
                             if succes {
                                 presentationMode.wrappedValue.dismiss()
                             } else {

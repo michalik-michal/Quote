@@ -7,7 +7,7 @@ class HomeViewModel: ObservableObject {
     let service = QuoteService()
     
     init() {
-        fetchQuotes()
+        self.fetchQuotes()
     }
     
     func fetchQuotes() {
