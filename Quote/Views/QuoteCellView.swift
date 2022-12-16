@@ -2,24 +2,26 @@ import SwiftUI
 
 struct QuoteCellView: View {
     
-    var text: String
+    var quote: Quote
     
     var body: some View {
-        VStack {
-            Text(text)
+        NavigationLink {
+            QuoteView(quote: quote)
+        } label: {
+            Text(quote.quote)
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .foregroundColor(Color("PastelBackground"))
                 .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color("CellBorder"))
+                .cornerRadius(12)
         }
-        .frame(maxWidth: .infinity)
-        .background(Color("CellBorder"))
-        .cornerRadius(12)
     }
 }
 
 struct QuoteCellView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteCellView(text: "This is text quote")
+        QuoteCellView(quote: Quote(quote: "Preview quote", date: "11.12.22"))
     }
 }

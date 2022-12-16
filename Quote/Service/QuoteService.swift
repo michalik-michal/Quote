@@ -26,4 +26,15 @@ struct QuoteService {
                 completion(quotes)
             }
     }
+    
+    func deleteQuote(_ quote: Quote, succes: @escaping(Bool) -> Void) {
+        Firestore.firestore().collection("quotes").document(quote.id!).delete { error in
+            if let error = error {
+                print("Error deleting quote \(error)")
+                succes(false)
+            } else {
+                succes(true)
+            }
+        }
+    }
 }

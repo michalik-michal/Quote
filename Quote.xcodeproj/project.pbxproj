@@ -24,6 +24,8 @@
 		20680EF8294615FD0078596B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 20680EF7294615FD0078596B /* FirebaseStorage */; };
 		20680EFA29461A880078596B /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20680EF929461A880078596B /* QuoteService.swift */; };
 		20680EFD294662DB0078596B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20680EFC294662DB0078596B /* HomeViewModel.swift */; };
+		20680F6F294CDBAF0078596B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20680F6E294CDBAF0078596B /* QuoteView.swift */; };
+		20680F71294CE1500078596B /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20680F70294CE1500078596B /* QuoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		20680EEA294614670078596B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20680EF929461A880078596B /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
 		20680EFC294662DB0078596B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		20680F6E294CDBAF0078596B /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		20680F70294CE1500078596B /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,13 +81,11 @@
 		20680ED22945B1B40078596B /* Quote */ = {
 			isa = PBXGroup;
 			children = (
-				20680EE7294609AF0078596B /* Model */,
 				20680ED32945B1B40078596B /* QuoteApp.swift */,
-				20680EFB294662C10078596B /* Home */,
-				20680EF929461A880078596B /* QuoteService.swift */,
+				20680F6D294CDB390078596B /* Service */,
+				20680F6C294CDAFE0078596B /* Models */,
+				20680EFB294662C10078596B /* Views */,
 				20680ED52945B1B40078596B /* ContentView.swift */,
-				20680EE52945BA320078596B /* AddQuoteView.swift */,
-				20680EE32945B3360078596B /* QuoteCellView.swift */,
 				20680EEA294614670078596B /* GoogleService-Info.plist */,
 				20680ED72945B1B70078596B /* Assets.xcassets */,
 				20680ED92945B1B70078596B /* Preview Content */,
@@ -99,21 +101,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		20680EE7294609AF0078596B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				20680EE8294609B70078596B /* Quote.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		20680EFB294662C10078596B /* Home */ = {
+		20680EFB294662C10078596B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				20680EE12945B1E00078596B /* HomeView.swift */,
-				20680EFC294662DB0078596B /* HomeViewModel.swift */,
+				20680EE52945BA320078596B /* AddQuoteView.swift */,
+				20680EE32945B3360078596B /* QuoteCellView.swift */,
+				20680F6E294CDBAF0078596B /* QuoteView.swift */,
 			);
-			path = Home;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20680F6C294CDAFE0078596B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20680EE8294609B70078596B /* Quote.swift */,
+				20680EFC294662DB0078596B /* HomeViewModel.swift */,
+				20680F70294CE1500078596B /* QuoteViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20680F6D294CDB390078596B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				20680EF929461A880078596B /* QuoteService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				20680EFA29461A880078596B /* QuoteService.swift in Sources */,
+				20680F71294CE1500078596B /* QuoteViewModel.swift in Sources */,
 				20680EE22945B1E00078596B /* HomeView.swift in Sources */,
 				20680ED62945B1B40078596B /* ContentView.swift in Sources */,
 				20680EFD294662DB0078596B /* HomeViewModel.swift in Sources */,
 				20680ED42945B1B40078596B /* QuoteApp.swift in Sources */,
 				20680EE62945BA320078596B /* AddQuoteView.swift in Sources */,
 				20680EE9294609B70078596B /* Quote.swift in Sources */,
+				20680F6F294CDBAF0078596B /* QuoteView.swift in Sources */,
 				20680EE42945B3360078596B /* QuoteCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

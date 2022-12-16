@@ -10,7 +10,7 @@ struct HomeView: View {
                 Divider()
                 VStack(spacing: 20) {
                     ForEach(viewModel.quotes) { quote in
-                        QuoteCellView(text: quote.quote)
+                        QuoteCellView(quote: quote)
                     }
                 }
             }
@@ -19,13 +19,15 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle("Quotes")
             .toolbar {
-                NavigationLink {
-                    AddQuoteView()
-                } label: {
-                    Image(systemName: "plus")
-                        .resizable()
-                        .foregroundColor(Color("CellBackground"))
-                        .frame(width: 20, height: 20)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        AddQuoteView()
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .foregroundColor(Color("CellBackground"))
+                            .frame(width: 20, height: 20)
+                    }
                 }
             }
         }
