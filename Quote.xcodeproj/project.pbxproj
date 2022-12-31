@@ -29,11 +29,12 @@
 		20E210D429583C5B007BE7DA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E210BA29583C32007BE7DA /* WidgetKit.framework */; };
 		20E210D529583C5B007BE7DA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E210BC29583C32007BE7DA /* SwiftUI.framework */; };
 		20E210D829583C5B007BE7DA /* QuoteWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210D729583C5B007BE7DA /* QuoteWidgetBundle.swift */; };
-		20E210DA29583C5B007BE7DA /* QuoteWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210D929583C5B007BE7DA /* QuoteWidget.swift */; };
 		20E210DC29583C5C007BE7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E210DB29583C5C007BE7DA /* Assets.xcassets */; };
 		20E210E029583C5C007BE7DA /* QuoteWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 20E210D329583C5B007BE7DA /* QuoteWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		20E210E529583DD9007BE7DA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 20E210E429583DD9007BE7DA /* FirebaseFirestore */; };
 		20E210E6295841F8007BE7DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20680EEA294614670078596B /* GoogleService-Info.plist */; };
+		20E210EC295EE568007BE7DA /* QuoteWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210D929583C5B007BE7DA /* QuoteWidget.swift */; };
+		20E210F0295EF37C007BE7DA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20E210EF295EF37C007BE7DA /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 				20E210D529583C5B007BE7DA /* SwiftUI.framework in Frameworks */,
 				20E210D429583C5B007BE7DA /* WidgetKit.framework in Frameworks */,
 				20E210E529583DD9007BE7DA /* FirebaseFirestore in Frameworks */,
+				20E210F0295EF37C007BE7DA /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,8 +196,8 @@
 		20E210D629583C5B007BE7DA /* QuoteWidget */ = {
 			isa = PBXGroup;
 			children = (
-				20E210D729583C5B007BE7DA /* QuoteWidgetBundle.swift */,
 				20E210D929583C5B007BE7DA /* QuoteWidget.swift */,
+				20E210D729583C5B007BE7DA /* QuoteWidgetBundle.swift */,
 				20E210DB29583C5C007BE7DA /* Assets.xcassets */,
 				20E210DD29583C5C007BE7DA /* Info.plist */,
 			);
@@ -247,6 +249,7 @@
 			name = QuoteWidgetExtension;
 			packageProductDependencies = (
 				20E210E429583DD9007BE7DA /* FirebaseFirestore */,
+				20E210EF295EF37C007BE7DA /* FirebaseFirestoreSwift */,
 			);
 			productName = QuoteWidgetExtension;
 			productReference = 20E210D329583C5B007BE7DA /* QuoteWidgetExtension.appex */;
@@ -336,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20E210DA29583C5B007BE7DA /* QuoteWidget.swift in Sources */,
+				20E210EC295EE568007BE7DA /* QuoteWidget.swift in Sources */,
 				20E210D829583C5B007BE7DA /* QuoteWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +486,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,6 +520,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,6 +549,7 @@
 				INFOPLIST_FILE = QuoteWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = QuoteWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,6 +577,7 @@
 				INFOPLIST_FILE = QuoteWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = QuoteWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,6 +671,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 20680EEC294615FD0078596B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		20E210EF295EF37C007BE7DA /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20680EEC294615FD0078596B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

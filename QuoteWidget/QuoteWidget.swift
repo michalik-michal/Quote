@@ -1,6 +1,7 @@
 import WidgetKit
 import SwiftUI
 import Firebase
+import FirebaseFirestoreSwift
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -15,7 +16,7 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let date = Date()
         
-        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 15, to: date)!
+        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: date)!
         
         fetchData { quote in
             let entry = SimpleEntry(date: date, quoteData: quote)
@@ -25,16 +26,18 @@ struct Provider: TimelineProvider {
     }
     
     func fetchData(completion: @escaping (QuoteModel) -> ()) {
-        let db = Firestore.firestore().collection("quotes").document("1QTKmjLB1yTlMbzgOQQ3")
-        
-        db.getDocument { snapshot, error in
-            guard let doc = snapshot?.data() else {
-                completion(QuoteModel(quote: "Error"))
-                return
+        Firestore.firestore().collection("quotes")
+            .addSnapshotListener { snapshot, _ in
+                guard let documents = snapshot?.documents else {
+                    return }
+                let quotes = documents.compactMap({try? $0.data(as: QuoteModel.self)})
+                if let randomQuote = quotes.randomElement() {
+                    completion(randomQuote)
+                } else {
+                    print(quotes.count)
+                    completion(QuoteModel(quote: "\(documents)"))
+                }
             }
-            let quote = doc["quote"] as? String ?? ""
-            completion(QuoteModel(quote: quote))
-        }
     }
 }
 
@@ -48,8 +51,12 @@ struct QuoteWidgetEntryView : View {
 
     var body: some View {
         ZStack {
+            Color("CellBorder")
             if let quote = entry.quoteData?.quote {
                 Text(quote)
+                    .font(.system(.title))
+                    .foregroundColor(Color("PastelBackground"))
+                    .multilineTextAlignment(.center)
             } else {
                 Text("Error")
             }
@@ -57,8 +64,8 @@ struct QuoteWidgetEntryView : View {
     }
 }
 
-struct QuoteModel: Identifiable {
-    var id = UUID().uuidString
+struct QuoteModel: Identifiable, Decodable, Equatable {
+    @DocumentID var id: String?
     var quote: String
 }
 
