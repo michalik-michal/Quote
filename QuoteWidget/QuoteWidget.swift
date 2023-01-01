@@ -53,7 +53,7 @@ struct QuoteWidgetEntryView : View {
         ZStack {
             Color("CellBorder")
             if let quote = entry.quoteData?.quote {
-                Text(quote)
+                Text("＂\(quote)＂")
                     .font(.system(.title))
                     .foregroundColor(Color("PastelBackground"))
                     .multilineTextAlignment(.center)
