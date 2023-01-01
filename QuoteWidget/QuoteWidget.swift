@@ -16,7 +16,7 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let date = Date()
         
-        let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: date)!
+        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 6, to: date)!
         
         fetchData { quote in
             let entry = SimpleEntry(date: date, quoteData: quote)
@@ -28,13 +28,11 @@ struct Provider: TimelineProvider {
     func fetchData(completion: @escaping (QuoteModel) -> ()) {
         Firestore.firestore().collection("quotes")
             .addSnapshotListener { snapshot, _ in
-                guard let documents = snapshot?.documents else {
-                    return }
+                guard let documents = snapshot?.documents else { return }
                 let quotes = documents.compactMap({try? $0.data(as: QuoteModel.self)})
                 if let randomQuote = quotes.randomElement() {
                     completion(randomQuote)
                 } else {
-                    print(quotes.count)
                     completion(QuoteModel(quote: "\(documents)"))
                 }
             }
