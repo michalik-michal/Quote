@@ -15,7 +15,7 @@ struct HomeView: View {
                 }
             }
             .padding(.horizontal)
-            .background(Color("PastelBackground"))
+            .background(Color("Primary"))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle("Quotes")
             .toolbar {
@@ -25,7 +25,7 @@ struct HomeView: View {
                     } label: {
                         Image(systemName: "plus")
                             .resizable()
-                            .foregroundColor(Color("CellBackground"))
+                            .foregroundColor(Color("SecondaryBackground"))
                             .frame(width: 20, height: 20)
                     }
                 }

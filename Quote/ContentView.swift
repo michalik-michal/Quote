@@ -6,7 +6,7 @@ struct ContentView: View {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.backgroundColor = UIColor(named: "PastelBackground")
+        navBarAppearance.backgroundColor = UIColor(named: "Primary")
     }  
     
     var body: some View {

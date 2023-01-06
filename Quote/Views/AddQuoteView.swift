@@ -11,7 +11,7 @@ struct AddQuoteView: View {
                 TextEditor(text: $quote)
                     .scrollContentBackground(.hidden)
                     .frame(height: 250)
-                    .background(Color("CellBackground"))
+                    .background(Color("SecondaryBackground"))
                     .cornerRadius(12)
                 Spacer()
                 Button {
@@ -29,14 +29,14 @@ struct AddQuoteView: View {
                         .bold()
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
-                        .background(Color("CellBackground"))
+                        .background(Color("SecondaryBackground"))
                         .cornerRadius(12)
-                        .foregroundColor(Color("PastelBackground"))
+                        .foregroundColor(Color("Primary"))
                 }
             }
             .padding()
             .navigationTitle("New quote")
-            .background(Color("PastelBackground"))
+            .background(Color("Primary"))
     }
 }
 

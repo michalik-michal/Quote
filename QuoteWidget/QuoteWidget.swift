@@ -53,7 +53,7 @@ struct QuoteWidgetEntryView : View {
             if let quote = entry.quoteData?.quote {
                 Text("＂\(quote)＂")
                     .font(.system(.title))
-                    .foregroundColor(Color("PastelBackground"))
+                    .foregroundColor(Color("Primary"))
                     .multilineTextAlignment(.center)
             } else {
                 Text("Error")

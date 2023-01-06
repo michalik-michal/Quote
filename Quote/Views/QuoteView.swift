@@ -10,7 +10,7 @@ struct QuoteView: View {
             Text(quote.quote)
                 .multilineTextAlignment(.center)
                 .font(.title2)
-                .foregroundColor(Color("PastelBackground"))
+                .foregroundColor(Color("Primary"))
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color("CellBorder"))
@@ -20,7 +20,7 @@ struct QuoteView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal)
-        .background(Color("PastelBackground"))
+        .background(Color("Primary"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .toolbar {
             Button {

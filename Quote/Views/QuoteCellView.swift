@@ -11,7 +11,7 @@ struct QuoteCellView: View {
             Text(quote.quote)
                 .multilineTextAlignment(.center)
                 .font(.title2)
-                .foregroundColor(Color("PastelBackground"))
+                .foregroundColor(Color("Primary"))
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color("CellBorder"))
